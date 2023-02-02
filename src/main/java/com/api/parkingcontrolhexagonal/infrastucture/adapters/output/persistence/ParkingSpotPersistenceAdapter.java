@@ -7,6 +7,7 @@ import com.api.parkingcontrolhexagonal.infrastucture.adapters.output.persistence
 import com.api.parkingcontrolhexagonal.infrastucture.adapters.output.persistence.repository.ParkingSpotRepository;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -38,6 +39,11 @@ public class ParkingSpotPersistenceAdapter implements ParkingSpotOutputPort {
 
         ParkingSpot parkingSpot = parkingSpotPersistenceMapper.toParkingSpot(parkingSpotEntity.get());
         return Optional.of(parkingSpot);
+    }
+
+    @Override
+    public List<ParkingSpotEntity> getAllParkingSpot() {
+        return parkingSpotRepository.findAll();
     }
 
 }
