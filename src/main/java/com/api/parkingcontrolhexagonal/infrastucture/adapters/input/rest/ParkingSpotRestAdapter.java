@@ -2,6 +2,7 @@ package com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest;
 
 import com.api.parkingcontrolhexagonal.application.ports.input.CreateParkingSpotUseCase;
 import com.api.parkingcontrolhexagonal.application.ports.input.GetParkingSpotUseCase;
+import com.api.parkingcontrolhexagonal.application.ports.input.UpdateParkingSpotUseCase;
 import com.api.parkingcontrolhexagonal.domain.model.ParkingSpot;
 import com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.data.request.ParkingSpotCreateRequest;
 import com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.data.response.ParkingSpotCreateResponse;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -23,6 +25,7 @@ import java.util.UUID;
 public class ParkingSpotRestAdapter {
     private final CreateParkingSpotUseCase createParkingSpotUseCase;
     private final GetParkingSpotUseCase getParkingSpotUseCase;
+    private final UpdateParkingSpotUseCase updateParkingSpotUseCase;
     private final ParkingSpotRestMapper parkingSpotRestMapper;
 
     @PostMapping()
@@ -38,5 +41,14 @@ public class ParkingSpotRestAdapter {
     public ResponseEntity<ParkingSpotQueryResponse> getParkingSpot(@PathVariable UUID id){
         ParkingSpot parkingSpot = getParkingSpotUseCase.getParkingSpotById(id);
         return new ResponseEntity<>(parkingSpotRestMapper.toParkingSpotQueryResponse(parkingSpot), HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updateParkingSpot(@PathVariable(value = "id") UUID id, @RequestBody @Valid ParkingSpotCreateRequest parkingSpotCreateRequest) {
+        Optional<ParkingSpot> parkingSpotOptional = Optional.ofNullable(getParkingSpotUseCase.getParkingSpotById(id));
+        ParkingSpot parkingSpot = parkingSpotRestMapper.toParkingSpot(parkingSpotCreateRequest);
+        parkingSpot.setId(parkingSpotOptional.get().getId());
+        parkingSpot = updateParkingSpotUseCase.updateParkingSpot(parkingSpot);
+        return new ResponseEntity<>(parkingSpotRestMapper.toParkingSpotCreateResponse(parkingSpot), HttpStatus.OK);
     }
 }
