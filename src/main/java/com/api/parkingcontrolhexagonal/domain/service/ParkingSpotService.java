@@ -9,9 +9,10 @@ import com.api.parkingcontrolhexagonal.application.ports.output.ParkingSpotOutpu
 import com.api.parkingcontrolhexagonal.domain.event.ParkingSpotCreatedEvent;
 import com.api.parkingcontrolhexagonal.domain.exception.ParkingSpotNotFound;
 import com.api.parkingcontrolhexagonal.domain.model.ParkingSpot;
+import com.api.parkingcontrolhexagonal.infrastucture.adapters.output.persistence.entity.ParkingSpotEntity;
 import lombok.AllArgsConstructor;
 
-import java.util.Optional;
+import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -30,6 +31,11 @@ public class ParkingSpotService implements GetParkingSpotUseCase, CreateParkingS
     @Override
     public ParkingSpot getParkingSpotById(UUID id) {
         return parkingSpotOutputPort.getParkingSpotById(id).orElseThrow(() -> new ParkingSpotNotFound("Product not found with id: " + id));
+    }
+
+    @Override
+    public List<ParkingSpotEntity> getAllParkingSpot() {
+        return parkingSpotOutputPort.getAllParkingSpot();
     }
 
     @Override

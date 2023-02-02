@@ -45,6 +45,11 @@ public class ParkingSpotRestAdapter {
         return new ResponseEntity<>(parkingSpotRestMapper.toParkingSpotQueryResponse(parkingSpot), HttpStatus.OK);
     }
 
+    @GetMapping()
+    public ResponseEntity<Object> getAllParkingSpots() {
+        return ResponseEntity.status(HttpStatus.OK).body(getParkingSpotUseCase.getAllParkingSpot());
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateParkingSpot(@PathVariable(value = "id") UUID id, @RequestBody @Valid ParkingSpotCreateRequest parkingSpotCreateRequest) {
         Optional<ParkingSpot> parkingSpotOptional = Optional.ofNullable(getParkingSpotUseCase.getParkingSpotById(id));
