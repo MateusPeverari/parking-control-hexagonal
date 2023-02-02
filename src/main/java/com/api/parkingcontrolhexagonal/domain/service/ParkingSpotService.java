@@ -1,6 +1,7 @@
 package com.api.parkingcontrolhexagonal.domain.service;
 
 import com.api.parkingcontrolhexagonal.application.ports.input.CreateParkingSpotUseCase;
+import com.api.parkingcontrolhexagonal.application.ports.input.DeleteParkingSpotUseCase;
 import com.api.parkingcontrolhexagonal.application.ports.input.GetParkingSpotUseCase;
 import com.api.parkingcontrolhexagonal.application.ports.input.UpdateParkingSpotUseCase;
 import com.api.parkingcontrolhexagonal.application.ports.output.ParkingSpotEventPublisher;
@@ -10,10 +11,11 @@ import com.api.parkingcontrolhexagonal.domain.exception.ParkingSpotNotFound;
 import com.api.parkingcontrolhexagonal.domain.model.ParkingSpot;
 import lombok.AllArgsConstructor;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @AllArgsConstructor
-public class ParkingSpotService implements GetParkingSpotUseCase, CreateParkingSpotUseCase, UpdateParkingSpotUseCase {
+public class ParkingSpotService implements GetParkingSpotUseCase, CreateParkingSpotUseCase, UpdateParkingSpotUseCase, DeleteParkingSpotUseCase {
     private final ParkingSpotOutputPort parkingSpotOutputPort;
 
     private final ParkingSpotEventPublisher parkingSpotEventPublisher;
@@ -35,5 +37,10 @@ public class ParkingSpotService implements GetParkingSpotUseCase, CreateParkingS
         parkingSpot = parkingSpotOutputPort.saveParkingSpot(parkingSpot);
         parkingSpotEventPublisher.publishParkingSpotCreatedEvent(new ParkingSpotCreatedEvent(parkingSpot.getId()));
         return parkingSpot;
+    }
+
+    @Override
+    public void deleteParkingSpot(ParkingSpot parkingSpot) {
+        parkingSpotOutputPort.deleteParkingSpot(parkingSpot);
     }
 }
