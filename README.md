@@ -1,7 +1,7 @@
 # Parking Control API
 <img src = "http://img.shields.io/static/v1?label=STATUS&message=Developing&color=yellow&style=flat&logo" alt = "Developing" /> <img src = "http://img.shields.io/static/v1?label=JDK&message=17.0.5&color=blue&style=flat&logo" alt = "JDK 17.0.5" alt = "JDK 17.0.5"/> <img src = "http://img.shields.io/static/v1?label=Spring&message=2.7.8&color=blue&style=flat&logo" alt = "JDK 17.0.5" alt = "Spring 2.7.8"/>
 
-Repository to migrate a <a src="https://github.com/MateusPeverari/parking-control">Parking Control API</a>
+Repository to migrate a [Parking Control API](https://github.com/MateusPeverari/parking-control)
 to **Hexagonal Architecture**.
 
 ## 🛠️ Running the application
