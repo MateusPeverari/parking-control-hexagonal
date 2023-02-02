@@ -1,6 +1,7 @@
 package com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest;
 
 import com.api.parkingcontrolhexagonal.application.ports.input.CreateParkingSpotUseCase;
+import com.api.parkingcontrolhexagonal.application.ports.input.DeleteParkingSpotUseCase;
 import com.api.parkingcontrolhexagonal.application.ports.input.GetParkingSpotUseCase;
 import com.api.parkingcontrolhexagonal.application.ports.input.UpdateParkingSpotUseCase;
 import com.api.parkingcontrolhexagonal.domain.model.ParkingSpot;
@@ -26,6 +27,7 @@ public class ParkingSpotRestAdapter {
     private final CreateParkingSpotUseCase createParkingSpotUseCase;
     private final GetParkingSpotUseCase getParkingSpotUseCase;
     private final UpdateParkingSpotUseCase updateParkingSpotUseCase;
+    private final DeleteParkingSpotUseCase deleteParkingSpotUseCase;
     private final ParkingSpotRestMapper parkingSpotRestMapper;
 
     @PostMapping()
@@ -50,5 +52,12 @@ public class ParkingSpotRestAdapter {
         parkingSpot.setId(parkingSpotOptional.get().getId());
         parkingSpot = updateParkingSpotUseCase.updateParkingSpot(parkingSpot);
         return new ResponseEntity<>(parkingSpotRestMapper.toParkingSpotCreateResponse(parkingSpot), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> deleteParkingSpot(@PathVariable(value = "id") UUID id) {
+        ParkingSpot parkingSpot = getParkingSpotUseCase.getParkingSpotById(id);
+        deleteParkingSpotUseCase.deleteParkingSpot(parkingSpot);
+        return ResponseEntity.status(HttpStatus.OK).body("Parking Spot deleted successfully");
     }
 }
