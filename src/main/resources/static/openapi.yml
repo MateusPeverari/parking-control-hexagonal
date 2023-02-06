@@ -1,0 +1,213 @@
+openapi: 3.0.3
+info:
+  title: Swagger Parking Control API - OpenAPI 3.0
+  description: |-
+    Parking control API using API First concept
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+tags:
+  - name: parking-spot
+    description: Everything about your parking spots
+paths:
+  /parking-spot:
+      post:
+        tags:
+        - parking-spot
+        summary: Create a new parking spot
+        description: Create a new parking spot
+        operationId: createParkingSpot
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParkingSpotCreateRequest'
+          required: true
+        responses:
+          "200":
+            description: Sucessful operation
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ParkingSpotCreateResponse'
+      get:
+        tags:
+        - parking-spot
+        summary: Get all parking spots
+        description: Get all parking spots
+        operationId: getAllParkingSpots
+        responses:
+          "200":
+            description: Sucessful operation
+            content:
+              application/json:
+                schema:
+                  type: object
+  /parking-spot/{id}:
+    get:
+      tags:
+      - parking-spot
+      summary: Get one parking spot
+      description: Get one parking spot using it's id
+      operationId: getParkingSpot
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+          example: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      responses:
+        "200":
+          description: Sucessful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParkingSpotQueryResponse'
+    put:
+      tags:
+      - parking-spot
+      summary: Update an existing parking spot
+      description: Update an existing parking spot using it's id
+      operationId: updateParkingSpot
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+          example: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ParkingSpotCreateRequest'
+        required: true
+      responses:
+        "200":
+          description: Sucessful operation
+          content:
+            application/json:
+              schema:
+                type: object
+    delete:
+      tags:
+      - parking-spot
+      summary: Delete an existing parking spot
+      description: Delete an existing parking spot using it's id
+      operationId: deleteParkingSpot
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+          example: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+      responses:
+        "200":
+          description: Sucessful operation
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  schemas:
+    ParkingSpotCreateRequest:
+      required:
+      - apartment
+      - block
+      - brandCar
+      - colorCar
+      - licensePlateCar
+      - modelCar
+      - parkingSpotNumber
+      - responsibleName
+      type: object
+      properties:
+        parkingSpotNumber:
+          type: string
+          example: 124A
+        licensePlateCar:
+          type: string
+          example: AAA8888
+        brandCar:
+          type: string
+          example: Mercedes
+        modelCar:
+          type: string
+          example: C 63s
+        colorCar:
+          type: string
+          example: Black
+        responsibleName:
+          type: string
+          example: John Doe
+        apartment:
+          type: string
+          example: 124
+        block:
+          type: string
+          example: A
+    ParkingSpotCreateResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        parkingSpotNumber:
+          type: string
+          example: 124A
+        licensePlateCar:
+          type: string
+          example: AAA8888
+        brandCar:
+          type: string
+          example: Mercedes
+        modelCar:
+          type: string
+          example: C 63s
+        colorCar:
+          type: string
+          example: Black
+        responsibleName:
+          type: string
+          example: John Doe
+        apartment:
+          type: string
+          example: 124
+        block:
+          type: string
+          example: A
+    ParkingSpotQueryResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        parkingSpotNumber:
+          type: string
+          example: 124A
+        licensePlateCar:
+          type: string
+          example: AAA8888
+        brandCar:
+          type: string
+          example: Mercedes
+        modelCar:
+          type: string
+          example: C 63s
+        colorCar:
+          type: string
+          example: Black
+        responsibleName:
+          type: string
+          example: John Doe
+        apartment:
+          type: string
+          example: 124
+        block:
+          type: string
+          example: A
