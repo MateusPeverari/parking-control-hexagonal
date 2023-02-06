@@ -27,7 +27,7 @@ paths:
           "200":
             description: Sucessful operation
             content:
-              '*/*':
+              application/json:
                 schema:
                   $ref: '#/components/schemas/ParkingSpotCreateResponse'
       get:
@@ -40,7 +40,7 @@ paths:
           "200":
             description: Sucessful operation
             content:
-              '*/*':
+              application/json:
                 schema:
                   type: object
   /parking-spot/{id}:
@@ -62,7 +62,7 @@ paths:
         "200":
           description: Sucessful operation
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ParkingSpotQueryResponse'
     put:
@@ -89,7 +89,7 @@ paths:
         "200":
           description: Sucessful operation
           content:
-            '*/*':
+            application/json:
               schema:
                 type: object
     delete:
@@ -110,7 +110,7 @@ paths:
         "200":
           description: Sucessful operation
           content:
-            '*/*':
+            application/json:
               schema:
                 type: object
 components:
