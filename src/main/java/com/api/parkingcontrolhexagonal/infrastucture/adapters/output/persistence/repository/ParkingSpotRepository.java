@@ -4,9 +4,10 @@ import com.api.parkingcontrolhexagonal.infrastucture.adapters.output.persistence
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
 public interface ParkingSpotRepository extends JpaRepository<ParkingSpotEntity, UUID> {
-
+    Optional<ParkingSpotEntity> findByResponsibleName(String name);
 }

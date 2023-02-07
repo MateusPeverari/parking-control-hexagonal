@@ -42,6 +42,18 @@ public class ParkingSpotPersistenceAdapter implements ParkingSpotOutputPort {
     }
 
     @Override
+    public Optional<ParkingSpot> getParkingSpotByName(String name) {
+        Optional<ParkingSpotEntity> parkingSpotEntity = parkingSpotRepository.findByResponsibleName(name);
+
+        if (parkingSpotEntity.isEmpty()) {
+            return Optional.empty();
+        }
+
+        ParkingSpot parkingSpot = parkingSpotPersistenceMapper.toParkingSpot(parkingSpotEntity.get());
+        return Optional.of(parkingSpot);
+    }
+
+    @Override
     public List<ParkingSpotEntity> getAllParkingSpot() {
         return parkingSpotRepository.findAll();
     }

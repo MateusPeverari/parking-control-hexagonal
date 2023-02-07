@@ -30,14 +30,19 @@ public class ParkingSpotService implements GetParkingSpotUseCase, CreateParkingS
 
     @Override
     public ParkingSpot getParkingSpotById(UUID id) {
-        return parkingSpotOutputPort.getParkingSpotById(id).orElseThrow(() -> new ParkingSpotNotFound("Product not found with id: " + id));
+        return parkingSpotOutputPort.getParkingSpotById(id).orElseThrow(() -> new ParkingSpotNotFound("Parking Spot not found with id: " + id));
+    }
+
+    @Override
+    public ParkingSpot getParkingSpotByName(String name) {
+        return parkingSpotOutputPort.getParkingSpotByName(name).orElseThrow(() -> new ParkingSpotNotFound("Parking Spot not found with name: " + name));
+
     }
 
     @Override
     public List<ParkingSpotEntity> getAllParkingSpot() {
         return parkingSpotOutputPort.getAllParkingSpot();
     }
-
     @Override
     public ParkingSpot updateParkingSpot(ParkingSpot parkingSpot) {
         parkingSpot = parkingSpotOutputPort.saveParkingSpot(parkingSpot);

@@ -24,7 +24,7 @@ paths:
                 $ref: '#/components/schemas/ParkingSpotCreateRequest'
           required: true
         responses:
-          "200":
+          "201":
             description: Sucessful operation
             content:
               application/json:
@@ -43,6 +43,28 @@ paths:
               application/json:
                 schema:
                   type: object
+  /parking-spot/get-by-name/{name}:
+    get:
+      tags:
+        - parking-spot
+      summary: Get one parking spot
+      description: Get one parking spot by responsible name
+      operationId: GetParkingSpotByName
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "John Doe"
+      responses:
+        "200":
+          description: Sucessful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParkingSpotQueryResponse'
+
   /parking-spot/{id}:
     get:
       tags:
