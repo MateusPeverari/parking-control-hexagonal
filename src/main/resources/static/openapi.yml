@@ -30,6 +30,8 @@ paths:
               application/json:
                 schema:
                   $ref: '#/components/schemas/ParkingSpotCreateResponse'
+          "422":
+            description: Parking Spot could not be created. Duplicated registers
       get:
         tags:
         - parking-spot
