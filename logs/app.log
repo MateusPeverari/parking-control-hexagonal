@@ -1,0 +1,100 @@
+2023-02-09 10:26:05,708 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Starting ParkingControlHexagonalApplication using Java 17.0.5 on BRSVC-MTZ002951 with PID 11860 (C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal\target\classes started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-09 10:26:05,710 DEBUG com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-09 10:26:05,710 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] No active profile set, falling back to default profiles: default
+2023-02-09 10:26:10,598 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Started ParkingControlHexagonalApplication in 5.2 seconds (JVM running for 5.799)
+2023-02-09 10:27:03,755 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [http-nio-8080-exec-3] Parking spot created with id ab5a7bb2-a3ee-46cb-8e65-9ed7c5304643 at 09/02/2023 10:27:03
+2023-02-09 10:27:38,558 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [http-nio-8080-exec-4] Parking spot updated with id ab5a7bb2-a3ee-46cb-8e65-9ed7c5304643 at 09/02/2023 10:27:38
+2023-02-09 10:27:47,163 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [http-nio-8080-exec-5] Parking spot deleted with id ab5a7bb2-a3ee-46cb-8e65-9ed7c5304643 at 09/02/2023 10:27:47
+2023-02-09 10:27:58,239 ERROR com.zaxxer.hikari.pool.HikariPool [HikariPool-1 connection adder] HikariPool-1 - Error thrown while acquiring connection from data source
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: The database is open in exclusive mode; can not open additional connections [90135-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Session.checkSuspended(Session.java:1369)
+	at org.h2.engine.Session.transitionToState(Session.java:1361)
+	at org.h2.engine.Session.waitIfExclusiveModeEnabled(Session.java:1633)
+	at org.h2.command.Command.executeQuery(Command.java:186)
+	at org.h2.jdbc.JdbcConnection.isReadOnly(JdbcConnection.java:631)
+	at com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:408)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-02-09 11:34:03,685 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Starting ParkingControlHexagonalApplication using Java 17.0.5 on BRSVC-MTZ002951 with PID 16252 (C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal\target\classes started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-09 11:34:03,687 DEBUG com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-09 11:34:03,687 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] No active profile set, falling back to default profiles: default
+2023-02-09 11:34:08,122 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Started ParkingControlHexagonalApplication in 4.733 seconds (JVM running for 5.229)
+2023-02-09 11:34:18,061 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [http-nio-8080-exec-3] Parking spot created with id 4e613bd2-41e8-4e1e-a346-4c866cc4f272 at 09/02/2023 11:34:18
+2023-02-09 11:34:19,832 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-4] Unique index or primary key violation: "PUBLIC.UK_CDLEDE7INRWRBPN3MP096CRQY_INDEX_1 ON PUBLIC.PARKING_SPOT_ENTITY(LICENSE_PLATE_CAR) VALUES 1"; SQL statement:
+insert into parking_spot_entity (apartment, block, brand_car, color_car, license_plate_car, model_car, parking_spot_number, responsible_name, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [23505-200]
+2023-02-09 11:40:37,054 ERROR com.zaxxer.hikari.pool.HikariPool [HikariPool-1 connection adder] HikariPool-1 - Error thrown while acquiring connection from data source
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: The database is open in exclusive mode; can not open additional connections [90135-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Session.checkSuspended(Session.java:1369)
+	at org.h2.engine.Session.transitionToState(Session.java:1361)
+	at org.h2.engine.Session.setCurrentCommand(Session.java:1343)
+	at org.h2.engine.Session.endStatement(Session.java:1887)
+	at org.h2.command.Command.executeQuery(Command.java:227)
+	at org.h2.jdbc.JdbcConnection.isReadOnly(JdbcConnection.java:631)
+	at com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:408)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-02-09 11:43:03,036 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplicationTests [main] Starting ParkingControlHexagonalApplicationTests using Java 17.0.5 on BRSVC-MTZ002951 with PID 19044 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-09 11:43:03,039 DEBUG com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplicationTests [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-09 11:43:03,039 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplicationTests [main] No active profile set, falling back to default profiles: default
+2023-02-09 11:43:07,523 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplicationTests [main] Started ParkingControlHexagonalApplicationTests in 4.719 seconds (JVM running for 5.547)
+2023-02-09 11:43:50,824 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplicationTests [main] Starting ParkingControlHexagonalApplicationTests using Java 17.0.5 on BRSVC-MTZ002951 with PID 22172 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-09 11:43:50,828 DEBUG com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplicationTests [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-09 11:43:50,828 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplicationTests [main] No active profile set, falling back to default profiles: default
+2023-02-09 11:43:55,305 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplicationTests [main] Started ParkingControlHexagonalApplicationTests in 4.706 seconds (JVM running for 5.534)
+2023-02-09 11:44:14,746 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Starting ParkingControlHexagonalApplication using Java 17.0.5 on BRSVC-MTZ002951 with PID 8120 (C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal\target\classes started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-09 11:44:14,748 DEBUG com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-09 11:44:14,748 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] No active profile set, falling back to default profiles: default
+2023-02-09 11:44:19,293 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Started ParkingControlHexagonalApplication in 4.831 seconds (JVM running for 5.329)
+2023-02-09 11:44:30,738 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [http-nio-8080-exec-4] Parking spot created with id 2a33ff6f-1ca1-4fbb-95da-fabe4f96f7ea at 09/02/2023 11:44:30
+2023-02-09 11:44:32,320 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8080-exec-5] Unique index or primary key violation: "PUBLIC.UK_CDLEDE7INRWRBPN3MP096CRQY_INDEX_1 ON PUBLIC.PARKING_SPOT_ENTITY(LICENSE_PLATE_CAR) VALUES 1"; SQL statement:
+insert into parking_spot_entity (apartment, block, brand_car, color_car, license_plate_car, model_car, parking_spot_number, responsible_name, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?) [23505-200]
+2023-02-09 11:46:11,648 ERROR com.zaxxer.hikari.pool.HikariPool [HikariPool-1 connection adder] HikariPool-1 - Error thrown while acquiring connection from data source
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: The database is open in exclusive mode; can not open additional connections [90135-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Session.checkSuspended(Session.java:1369)
+	at org.h2.engine.Session.transitionToState(Session.java:1361)
+	at org.h2.engine.Session.setCurrentCommand(Session.java:1343)
+	at org.h2.engine.Session.startStatementWithinTransaction(Session.java:1853)
+	at org.h2.command.Command.executeQuery(Command.java:190)
+	at org.h2.jdbc.JdbcConnection.isReadOnly(JdbcConnection.java:631)
+	at com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:408)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)

@@ -7,6 +7,8 @@ import com.api.parkingcontrolhexagonal.application.ports.input.UpdateParkingSpot
 import com.api.parkingcontrolhexagonal.application.ports.output.ParkingSpotEventPublisher;
 import com.api.parkingcontrolhexagonal.application.ports.output.ParkingSpotOutputPort;
 import com.api.parkingcontrolhexagonal.domain.event.ParkingSpotCreatedEvent;
+import com.api.parkingcontrolhexagonal.domain.event.ParkingSpotDeletedEvent;
+import com.api.parkingcontrolhexagonal.domain.event.ParkingSpotUpdatedEvent;
 import com.api.parkingcontrolhexagonal.domain.exception.ParkingSpotNotFound;
 import com.api.parkingcontrolhexagonal.domain.model.ParkingSpot;
 import com.api.parkingcontrolhexagonal.infrastucture.adapters.output.persistence.entity.ParkingSpotEntity;
@@ -35,7 +37,7 @@ public class ParkingSpotService implements GetParkingSpotUseCase, CreateParkingS
 
     @Override
     public ParkingSpot getParkingSpotByName(String name) {
-        return parkingSpotOutputPort.getParkingSpotByName(name).orElseThrow(() -> new ParkingSpotNotFound("Parking Spot not found with name: " + name));
+        return parkingSpotOutputPort.getParkingSpotByName(name).orElseThrow(() -> new ParkingSpotNotFound("No Parking Spots found with responsible name: " + name));
 
     }
 
@@ -46,12 +48,13 @@ public class ParkingSpotService implements GetParkingSpotUseCase, CreateParkingS
     @Override
     public ParkingSpot updateParkingSpot(ParkingSpot parkingSpot) {
         parkingSpot = parkingSpotOutputPort.saveParkingSpot(parkingSpot);
-        parkingSpotEventPublisher.publishParkingSpotCreatedEvent(new ParkingSpotCreatedEvent(parkingSpot.getId()));
+        parkingSpotEventPublisher.publishParkingSpotUpdatedEvent(new ParkingSpotUpdatedEvent(parkingSpot.getId()));
         return parkingSpot;
     }
 
     @Override
     public void deleteParkingSpot(ParkingSpot parkingSpot) {
         parkingSpotOutputPort.deleteParkingSpot(parkingSpot);
+        parkingSpotEventPublisher.publishParkingSpotDeletedEvent(new ParkingSpotDeletedEvent(parkingSpot.getId()));
     }
 }

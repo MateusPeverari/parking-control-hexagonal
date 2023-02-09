@@ -28,7 +28,7 @@ public class CustomizedExceptionAdapter extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(ParkingSpotNotFound.class)
-    public final ResponseEntity<Object> handleUserNotFoundException(ParkingSpotNotFound ex, WebRequest request) {
+    public final ResponseEntity<Object> handleParkingSpotNotFoundException(ParkingSpotNotFound ex, WebRequest request) {
         ExceptionResponse exceptionResponse = new ExceptionResponse(LocalDateTime.now(), ex.getMessage(), Arrays.asList(request.getDescription(false)));
 
         return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
