@@ -11,12 +11,12 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ParkingSpotCreatedEvent {
+public class ParkingSpotDeletedEvent {
     private UUID id;
 
     private LocalDateTime date;
 
-    public ParkingSpotCreatedEvent(UUID id) {
+    public ParkingSpotDeletedEvent(UUID id) {
         this.id = id;
         this.date = LocalDateTime.now();
     }

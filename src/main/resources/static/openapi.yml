@@ -30,6 +30,8 @@ paths:
               application/json:
                 schema:
                   $ref: '#/components/schemas/ParkingSpotCreateResponse'
+          "422":
+            description: Parking Spot could not be created. Duplicated registers
       get:
         tags:
         - parking-spot
@@ -64,6 +66,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ParkingSpotQueryResponse'
+        "404":
+          description: Parking spot not found
 
   /parking-spot/{id}:
     get:
@@ -87,6 +91,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ParkingSpotQueryResponse'
+        "404":
+          description: Parking spot not found
     put:
       tags:
       - parking-spot
@@ -114,6 +120,8 @@ paths:
             application/json:
               schema:
                 type: object
+        "404":
+          description: Parking spot not found
     delete:
       tags:
       - parking-spot
@@ -135,6 +143,8 @@ paths:
             application/json:
               schema:
                 type: object
+        "404":
+          description: Parking spot not found
 components:
   schemas:
     ParkingSpotCreateRequest:

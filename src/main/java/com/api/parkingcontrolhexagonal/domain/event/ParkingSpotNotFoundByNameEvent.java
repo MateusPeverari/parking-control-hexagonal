@@ -4,20 +4,19 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.UUID;
 
 @Builder
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ParkingSpotCreatedEvent {
-    private UUID id;
+public class ParkingSpotNotFoundByNameEvent {
+    private String name;
 
     private LocalDateTime date;
 
-    public ParkingSpotCreatedEvent(UUID id) {
-        this.id = id;
+    public ParkingSpotNotFoundByNameEvent(String name) {
+        this.name = name;
         this.date = LocalDateTime.now();
     }
 

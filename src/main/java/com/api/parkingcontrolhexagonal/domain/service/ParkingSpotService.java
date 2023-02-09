@@ -6,7 +6,8 @@ import com.api.parkingcontrolhexagonal.application.ports.input.GetParkingSpotUse
 import com.api.parkingcontrolhexagonal.application.ports.input.UpdateParkingSpotUseCase;
 import com.api.parkingcontrolhexagonal.application.ports.output.ParkingSpotEventPublisher;
 import com.api.parkingcontrolhexagonal.application.ports.output.ParkingSpotOutputPort;
-import com.api.parkingcontrolhexagonal.domain.event.ParkingSpotCreatedEvent;
+import com.api.parkingcontrolhexagonal.domain.event.*;
+import com.api.parkingcontrolhexagonal.domain.exception.DuplicateRegister;
 import com.api.parkingcontrolhexagonal.domain.exception.ParkingSpotNotFound;
 import com.api.parkingcontrolhexagonal.domain.model.ParkingSpot;
 import com.api.parkingcontrolhexagonal.infrastucture.adapters.output.persistence.entity.ParkingSpotEntity;
@@ -23,19 +24,34 @@ public class ParkingSpotService implements GetParkingSpotUseCase, CreateParkingS
 
     @Override
     public ParkingSpot createParkingSpot(ParkingSpot parkingSpot) {
-        parkingSpot = parkingSpotOutputPort.saveParkingSpot(parkingSpot);
-        parkingSpotEventPublisher.publishParkingSpotCreatedEvent(new ParkingSpotCreatedEvent(parkingSpot.getId()));
-        return parkingSpot;
+        try {
+            parkingSpot = parkingSpotOutputPort.saveParkingSpot(parkingSpot);
+            parkingSpotEventPublisher.publishParkingSpotCreatedEvent(new ParkingSpotCreatedEvent(parkingSpot.getId()));
+            return parkingSpot;
+        } catch (Exception e) {
+            parkingSpotEventPublisher.publishParkingSpotNotCreatedEvent(new ParkingSpotNotCreatedEvent(parkingSpot.getId()));
+            throw new DuplicateRegister("Duplicated registers");
+        }
     }
 
     @Override
     public ParkingSpot getParkingSpotById(UUID id) {
-        return parkingSpotOutputPort.getParkingSpotById(id).orElseThrow(() -> new ParkingSpotNotFound("Parking Spot not found with id: " + id));
+        if (parkingSpotOutputPort.getParkingSpotById(id).isEmpty()) {
+            parkingSpotEventPublisher.publishParkingSpotNotFoundByIdEvent(new ParkingSpotNotFoundByIdEvent(id));
+            throw new ParkingSpotNotFound("Parking Spot not found with id: " + id);
+        } else {
+            return parkingSpotOutputPort.getParkingSpotById(id).orElseThrow(() -> new ParkingSpotNotFound("Parking Spot not found with id: " + id));
+        }
     }
 
     @Override
     public ParkingSpot getParkingSpotByName(String name) {
-        return parkingSpotOutputPort.getParkingSpotByName(name).orElseThrow(() -> new ParkingSpotNotFound("Parking Spot not found with name: " + name));
+        if (parkingSpotOutputPort.getParkingSpotByName(name).isEmpty()) {
+            parkingSpotEventPublisher.publishParkingSpotNotFoundByNameEvent(new ParkingSpotNotFoundByNameEvent(name));
+            throw new ParkingSpotNotFound("No Parking Spots found with responsible name: " + name);
+        } else {
+            return parkingSpotOutputPort.getParkingSpotByName(name).orElseThrow(() -> new ParkingSpotNotFound("No Parking Spots found with responsible name: " + name));
+        }
 
     }
 
@@ -46,12 +62,13 @@ public class ParkingSpotService implements GetParkingSpotUseCase, CreateParkingS
     @Override
     public ParkingSpot updateParkingSpot(ParkingSpot parkingSpot) {
         parkingSpot = parkingSpotOutputPort.saveParkingSpot(parkingSpot);
-        parkingSpotEventPublisher.publishParkingSpotCreatedEvent(new ParkingSpotCreatedEvent(parkingSpot.getId()));
+        parkingSpotEventPublisher.publishParkingSpotUpdatedEvent(new ParkingSpotUpdatedEvent(parkingSpot.getId()));
         return parkingSpot;
     }
 
     @Override
     public void deleteParkingSpot(ParkingSpot parkingSpot) {
         parkingSpotOutputPort.deleteParkingSpot(parkingSpot);
+        parkingSpotEventPublisher.publishParkingSpotDeletedEvent(new ParkingSpotDeletedEvent(parkingSpot.getId()));
     }
 }

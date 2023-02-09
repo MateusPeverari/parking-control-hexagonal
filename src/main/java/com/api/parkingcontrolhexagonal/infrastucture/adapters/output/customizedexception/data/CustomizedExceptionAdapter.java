@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.api.parkingcontrolhexagonal.domain.exception.DuplicateRegister;
 import com.api.parkingcontrolhexagonal.domain.exception.ParkingSpotNotFound;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 @ControllerAdvice
 @RestController
+@Slf4j
 public class CustomizedExceptionAdapter extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
@@ -28,10 +31,16 @@ public class CustomizedExceptionAdapter extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(ParkingSpotNotFound.class)
-    public final ResponseEntity<Object> handleUserNotFoundException(ParkingSpotNotFound ex, WebRequest request) {
+    public final ResponseEntity<Object> handleParkingSpotNotFoundException(ParkingSpotNotFound ex, WebRequest request) {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(LocalDateTime.now(), ex.getMessage(), Arrays.asList(request.getDescription(false)));
+        return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(DuplicateRegister.class)
+    public final ResponseEntity<Object> handleDuplicateRegisterUseException(DuplicateRegister ex, WebRequest request) {
         ExceptionResponse exceptionResponse = new ExceptionResponse(LocalDateTime.now(), ex.getMessage(), Arrays.asList(request.getDescription(false)));
 
-        return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
+        return new ResponseEntity(exceptionResponse, HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
     @Override
