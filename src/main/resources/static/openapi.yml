@@ -65,7 +65,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ParkingSpotQueryResponse'
+                type: object
         "404":
           description: Parking spot not found
 

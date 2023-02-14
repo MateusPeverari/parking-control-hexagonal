@@ -8,6 +8,6 @@ import java.util.UUID;
 
 public interface GetParkingSpotUseCase {
     ParkingSpot getParkingSpotById(UUID id);
-    ParkingSpot getParkingSpotByName(String name);
+    List<ParkingSpotEntity> getParkingSpotByName(String name);
     List<ParkingSpotEntity> getAllParkingSpot();
 }
