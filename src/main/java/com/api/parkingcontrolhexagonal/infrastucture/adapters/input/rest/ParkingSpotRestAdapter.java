@@ -52,9 +52,9 @@ public class ParkingSpotRestAdapter implements ParkingSpotApi {
     }
 
     @Override
-    public ResponseEntity<ParkingSpotQueryResponse> getParkingSpotByName(String name) {
-        ParkingSpot parkingSpot = getParkingSpotUseCase.getParkingSpotByName(name);
-        return new ResponseEntity<>(parkingSpotRestMapper.toParkingSpotQueryResponse(parkingSpot), HttpStatus.OK);
+    public ResponseEntity<Object> getParkingSpotByName(String name) {
+        return ResponseEntity.status(HttpStatus.OK).body(getParkingSpotUseCase.getParkingSpotByName(name));
+
     }
 
     @Override

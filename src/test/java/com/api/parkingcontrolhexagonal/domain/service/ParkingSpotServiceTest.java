@@ -43,7 +43,7 @@ public class ParkingSpotServiceTest {
     void getParkingSpotByName() {
         var result = parkingSpotService.getParkingSpotByName("John Doe");
 
-        assertEquals(result.getParkingSpotNumber(), "122B");
+        assertEquals(result.size(), 1);
     }
 
     @Test

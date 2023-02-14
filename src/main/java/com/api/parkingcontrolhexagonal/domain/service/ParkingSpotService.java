@@ -45,12 +45,12 @@ public class ParkingSpotService implements GetParkingSpotUseCase, CreateParkingS
     }
 
     @Override
-    public ParkingSpot getParkingSpotByName(String name) {
+    public List<ParkingSpotEntity> getParkingSpotByName(String name) {
         if (parkingSpotOutputPort.getParkingSpotByName(name).isEmpty()) {
             parkingSpotEventPublisher.publishParkingSpotNotFoundByNameEvent(new ParkingSpotNotFoundByNameEvent(name));
             throw new ParkingSpotNotFound("No Parking Spots found with responsible name: " + name);
         } else {
-            return parkingSpotOutputPort.getParkingSpotByName(name).orElseThrow(() -> new ParkingSpotNotFound("No Parking Spots found with responsible name: " + name));
+            return parkingSpotOutputPort.getParkingSpotByName(name);
         }
 
     }

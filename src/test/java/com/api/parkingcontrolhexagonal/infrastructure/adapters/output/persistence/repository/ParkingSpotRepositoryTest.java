@@ -13,6 +13,7 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -38,12 +39,9 @@ class ParkingSpotRepositoryTest {
 
     @Test
     void findParkingSpotByName() {
-        Optional<ParkingSpotEntity> parkingSpotEntity = parkingSpotRepository.findByResponsibleName("John Doe");
-        ParkingSpot result = parkingSpotPersistenceMapper.toParkingSpot(parkingSpotEntity.get());
+        List<ParkingSpotEntity> result = parkingSpotRepository.findByResponsibleName("John Doe");
 
-        UUID id = UUID.fromString("d910c574-0153-444e-bc1b-03d34cf7f96f");
-
-        assertEquals(result.getId(), id);
+        assertEquals(result.size(), 1);
     }
 
     @Test
