@@ -2,7 +2,9 @@ openapi: 3.0.3
 info:
   title: Swagger Parking Control API - OpenAPI 3.0
   description: |-
-    Parking control API using API First concept
+    Parking control API generated from OpenAPI 3.0.
+
+    API used to control a building parking slot. All the parking spots are related to a apartment on the building and also to a specific car.
   version: 1.0.0
 servers:
   - url: http://localhost:8080
