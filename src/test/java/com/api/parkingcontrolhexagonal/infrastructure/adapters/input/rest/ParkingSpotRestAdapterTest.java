@@ -2,7 +2,6 @@ package com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest;
 
 import com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication;
 import com.api.parkingcontrolhexagonal.domain.exception.ParkingSpotNotFound;
-import com.api.parkingcontrolhexagonal.infrastructure.adapters.data.ParkingSpotCreateRequest;
 import com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.ParkingSpotRestAdapter;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -80,6 +79,17 @@ public class ParkingSpotRestAdapterTest {
         assertEquals(result.getStatusCodeValue(), 200);
     }
 
+    @Test
+    void getParkingSpotByNumber() {
+        var result = parkingSpotRestAdapter.getParkingSpotByNumber("122B");
 
+        assertEquals(result.getStatusCodeValue(), 200);
+    }
 
+    @Test
+    void getParkingSpotByNumberNotFound() {
+        assertThrows(ParkingSpotNotFound.class, () -> {
+            parkingSpotRestAdapter.getParkingSpotByNumber("23A");
+        });
+    }
 }

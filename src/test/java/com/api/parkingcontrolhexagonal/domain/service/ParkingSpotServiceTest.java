@@ -52,6 +52,19 @@ public class ParkingSpotServiceTest {
             parkingSpotService.getParkingSpotByName("Aaaa");
         });
     }
+    @Test
+    void getParkingSpotByNumber() {
+        var result = parkingSpotService.getParkingSpotByNumber("54B");
+
+        assertEquals("Porsche", result.getBrandCar());
+    }
+
+    @Test
+    void getParkingSpotByNumberNotFound() {
+        assertThrows(ParkingSpotNotFound.class, () -> {
+            parkingSpotService.getParkingSpotByNumber("132B");
+        });
+    }
 
     @Test
     void getAllParkingSpots() {
