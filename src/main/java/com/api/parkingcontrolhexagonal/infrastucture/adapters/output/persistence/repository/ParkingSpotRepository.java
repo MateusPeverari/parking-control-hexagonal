@@ -11,4 +11,6 @@ import java.util.UUID;
 @Repository
 public interface ParkingSpotRepository extends JpaRepository<ParkingSpotEntity, UUID> {
     List<ParkingSpotEntity> findByResponsibleName(String name);
+
+    Optional<ParkingSpotEntity> findByParkingSpotNumber(String number);
 }

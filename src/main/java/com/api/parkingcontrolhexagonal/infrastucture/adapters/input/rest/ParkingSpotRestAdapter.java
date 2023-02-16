@@ -58,6 +58,13 @@ public class ParkingSpotRestAdapter implements ParkingSpotApi {
     }
 
     @Override
+    public ResponseEntity<ParkingSpotQueryResponse> getParkingSpotByNumber(String number) {
+        ParkingSpot parkingSpot = getParkingSpotUseCase.getParkingSpotByNumber(number);
+        return new ResponseEntity<>(parkingSpotRestMapper.toParkingSpotQueryResponse(parkingSpot), HttpStatus.OK);
+    }
+
+
+    @Override
     public ResponseEntity<Object> updateParkingSpot(@PathVariable(value = "id") UUID id, @RequestBody @Valid ParkingSpotCreateRequest parkingSpotCreateRequest) {
         Optional<ParkingSpot> parkingSpotOptional = Optional.ofNullable(getParkingSpotUseCase.getParkingSpotById(id));
         ParkingSpot parkingSpot = parkingSpotRestMapper.toParkingSpot(parkingSpotCreateRequest);

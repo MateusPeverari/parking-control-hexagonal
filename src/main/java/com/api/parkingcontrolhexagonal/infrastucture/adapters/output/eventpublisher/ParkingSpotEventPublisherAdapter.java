@@ -39,6 +39,12 @@ public class ParkingSpotEventPublisherAdapter implements ParkingSpotEventPublish
 
     }
 
+    @Override
+    public void publishParkingSpotNotFoundByNumberEvent(ParkingSpotNotFoundByNumberEvent event) {
+        applicationEventPublisher.publishEvent(event);
+
+    }
+
     public ParkingSpotEventPublisherAdapter(ApplicationEventPublisher applicationEventPublisher) {
         this.applicationEventPublisher = applicationEventPublisher;
     }

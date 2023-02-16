@@ -37,4 +37,9 @@ public class ParkingSpotEventListenerAdapter {
     public void handle(ParkingSpotNotFoundByNameEvent event) {
         log.info("Parking spot could not be found with name " + event.getName() + " at " + event.getDate());
     }
+
+    @EventListener
+    public void handle(ParkingSpotNotFoundByNumberEvent event) {
+        log.info("Parking spot could not be found with number " + event.getParkingSpotNumber() + " at " + event.getDate());
+    }
 }

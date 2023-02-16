@@ -1,12 +1,866 @@
-2023-02-15 10:11:20,328 INFO com.api.parkingcontrolhexagonal.domain.service.ParkingSpotServiceTest [main] Starting ParkingSpotServiceTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 5836 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
-2023-02-15 10:11:20,337 DEBUG com.api.parkingcontrolhexagonal.domain.service.ParkingSpotServiceTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
-2023-02-15 10:11:20,338 INFO com.api.parkingcontrolhexagonal.domain.service.ParkingSpotServiceTest [main] No active profile set, falling back to default profiles: default
-2023-02-15 10:11:25,174 INFO com.api.parkingcontrolhexagonal.domain.service.ParkingSpotServiceTest [main] Started ParkingSpotServiceTest in 5.172 seconds (JVM running for 6.345)
-2023-02-15 10:11:25,519 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot deleted with id 190e0f71-9b44-46c8-8e30-5913a22b2446 at 15/02/2023 10:11:25
-2023-02-15 10:11:25,694 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2222 at 15/02/2023 10:11:25
-2023-02-15 10:11:25,725 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with name Aaaa at 15/02/2023 10:11:25
-2023-02-15 10:11:25,759 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2555 at 15/02/2023 10:11:25
-2023-02-15 10:11:25,840 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot deleted with id 190e0f71-9b44-46c8-8e30-5913a22b2446 at 15/02/2023 10:11:25
-2023-02-15 10:11:25,855 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2555 at 15/02/2023 10:11:25
-2023-02-15 10:11:25,864 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with name Aaaa at 15/02/2023 10:11:25
-2023-02-15 10:11:25,894 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2555 at 15/02/2023 10:11:25
+2023-02-16 15:17:45,322 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] Starting ParkingSpotRestAdapterTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 1256 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:17:45,335 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:17:45,336 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:17:47,011 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 4 of constructor in com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.ParkingSpotRestAdapter required a bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' in your configuration.
+
+2023-02-16 15:17:47,016 ERROR org.springframework.test.context.TestContextManager [main] Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@36776c32] to prepare test instance [com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest@7792d851]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.postProcessFields(MockitoTestExecutionListener.java:110)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.injectFields(MockitoTestExecutionListener.java:94)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:61)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'parkingSpotRestAdapter' defined in file [C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal\target\classes\com\api\parkingcontrolhexagonal\infrastucture\adapters\input\rest\ParkingSpotRestAdapter.class]: Unsatisfied dependency expressed through constructor parameter 4; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:414)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 72 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1799)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 90 common frames omitted
+2023-02-16 15:18:47,646 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] Starting ParkingSpotRestAdapterTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 16176 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:18:47,649 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:18:47,649 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:18:49,021 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 4 of constructor in com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.ParkingSpotRestAdapter required a bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' in your configuration.
+
+2023-02-16 15:18:49,025 ERROR org.springframework.test.context.TestContextManager [main] Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7061622] to prepare test instance [com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest@32d418a9]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.postProcessFields(MockitoTestExecutionListener.java:110)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.injectFields(MockitoTestExecutionListener.java:94)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:61)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'parkingSpotRestAdapter' defined in file [C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal\target\classes\com\api\parkingcontrolhexagonal\infrastucture\adapters\input\rest\ParkingSpotRestAdapter.class]: Unsatisfied dependency expressed through constructor parameter 4; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:414)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 72 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1799)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 90 common frames omitted
+2023-02-16 15:21:08,641 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterTestMock using Java 17.0.5 on BRSVC-MTZ002951 with PID 21464 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:21:08,644 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:21:08,644 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:21:10,128 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 4 of constructor in com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.ParkingSpotRestAdapter required a bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' in your configuration.
+
+2023-02-16 15:21:10,132 ERROR org.springframework.test.context.TestContextManager [main] Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5974b7e8] to prepare test instance [com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest@2839e3c8]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.postProcessFields(MockitoTestExecutionListener.java:110)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.injectFields(MockitoTestExecutionListener.java:94)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:61)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'parkingSpotRestAdapter' defined in file [C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal\target\classes\com\api\parkingcontrolhexagonal\infrastucture\adapters\input\rest\ParkingSpotRestAdapter.class]: Unsatisfied dependency expressed through constructor parameter 4; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:414)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 72 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1799)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 90 common frames omitted
+2023-02-16 15:24:49,238 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 21968 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:24:49,240 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:24:49,240 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:24:51,087 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 4 of constructor in com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.ParkingSpotRestAdapter required a bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' in your configuration.
+
+2023-02-16 15:24:51,091 ERROR org.springframework.test.context.TestContextManager [main] Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@47272cd3] to prepare test instance [com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest@73fbdf68]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.postProcessFields(MockitoTestExecutionListener.java:110)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.injectFields(MockitoTestExecutionListener.java:94)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:61)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'parkingSpotRestAdapter' defined in file [C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal\target\classes\com\api\parkingcontrolhexagonal\infrastucture\adapters\input\rest\ParkingSpotRestAdapter.class]: Unsatisfied dependency expressed through constructor parameter 4; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:414)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 72 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1799)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 90 common frames omitted
+2023-02-16 15:27:32,875 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 9728 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:27:32,878 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:27:32,878 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:27:34,576 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 4 of constructor in com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.ParkingSpotRestAdapter required a bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' in your configuration.
+
+2023-02-16 15:27:34,585 ERROR org.springframework.test.context.TestContextManager [main] Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5974b7e8] to prepare test instance [com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest@2839e3c8]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.postProcessFields(MockitoTestExecutionListener.java:110)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.injectFields(MockitoTestExecutionListener.java:94)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:61)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'parkingSpotRestAdapter' defined in file [C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal\target\classes\com\api\parkingcontrolhexagonal\infrastucture\adapters\input\rest\ParkingSpotRestAdapter.class]: Unsatisfied dependency expressed through constructor parameter 4; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:414)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 72 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1799)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 90 common frames omitted
+2023-02-16 15:29:21,418 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] Starting ParkingSpotRestAdapterTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 27408 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:29:21,422 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:29:21,422 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:29:28,202 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] Started ParkingSpotRestAdapterTest in 7.175 seconds (JVM running for 8.585)
+2023-02-16 15:29:28,713 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot deleted with id 190e0f71-9b44-46c8-8e30-5913a22b2446 at 16/02/2023 15:29:28
+2023-02-16 15:29:28,761 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2555 at 16/02/2023 15:29:28
+2023-02-16 15:29:28,951 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with name Aaaa at 16/02/2023 15:29:28
+2023-02-16 15:29:28,990 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2555 at 16/02/2023 15:29:28
+2023-02-16 15:29:42,249 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 8568 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:29:42,251 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:29:42,251 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:29:43,637 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 4 of constructor in com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.ParkingSpotRestAdapter required a bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' in your configuration.
+
+2023-02-16 15:29:43,641 ERROR org.springframework.test.context.TestContextManager [main] Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@32d418a9] to prepare test instance [com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest@52ea0269]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.postProcessFields(MockitoTestExecutionListener.java:110)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.injectFields(MockitoTestExecutionListener.java:94)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:61)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'parkingSpotRestAdapter' defined in file [C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal\target\classes\com\api\parkingcontrolhexagonal\infrastucture\adapters\input\rest\ParkingSpotRestAdapter.class]: Unsatisfied dependency expressed through constructor parameter 4; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:414)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 72 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.api.parkingcontrolhexagonal.infrastucture.adapters.input.rest.mapper.ParkingSpotRestMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1799)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 90 common frames omitted
+2023-02-16 15:31:08,296 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 36276 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:31:08,300 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:31:08,300 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:31:11,149 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 3.31 seconds (JVM running for 4.858)
+2023-02-16 15:36:43,071 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 37724 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:36:43,074 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:36:43,075 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:36:45,947 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 3.339 seconds (JVM running for 4.727)
+2023-02-16 15:37:40,912 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 38612 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:37:40,915 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:37:40,915 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:37:43,840 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 3.342 seconds (JVM running for 4.216)
+2023-02-16 15:38:01,221 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 28032 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:38:01,226 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:38:01,226 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:38:04,277 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 3.515 seconds (JVM running for 5.323)
+2023-02-16 15:38:53,737 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 1164 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:38:53,739 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:38:53,739 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:38:56,563 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 3.355 seconds (JVM running for 4.969)
+2023-02-16 15:39:39,321 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 4788 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:39:39,324 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:39:39,324 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:39:42,144 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 3.354 seconds (JVM running for 4.664)
+2023-02-16 15:40:31,828 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 33648 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:40:31,830 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:40:31,831 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:40:34,404 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 3.139 seconds (JVM running for 4.522)
+2023-02-16 15:41:15,568 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 29852 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:41:15,570 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:41:15,570 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:41:18,019 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 2.751 seconds (JVM running for 3.603)
+2023-02-16 15:52:05,639 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 34936 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:52:05,642 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:52:05,642 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:52:07,400 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 2.078 seconds (JVM running for 3.065)
+2023-02-16 15:57:08,935 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 28124 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:57:08,936 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:57:08,936 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:57:10,969 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 2.388 seconds (JVM running for 3.287)
+2023-02-16 15:59:54,006 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 9184 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 15:59:54,009 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 15:59:54,009 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 15:59:55,948 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 2.262 seconds (JVM running for 3.119)
+2023-02-16 16:01:30,923 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 32872 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 16:01:30,924 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 16:01:30,925 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 16:01:32,719 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 2.105 seconds (JVM running for 3.0)
+2023-02-16 16:10:53,624 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 37320 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 16:10:53,626 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 16:10:53,626 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 16:10:55,357 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 2.032 seconds (JVM running for 2.908)
+2023-02-16 16:11:52,719 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 32928 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 16:11:52,720 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 16:11:52,720 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 16:11:54,401 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 1.981 seconds (JVM running for 2.863)
+2023-02-16 16:44:14,501 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 37468 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 16:44:14,504 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 16:44:14,504 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 16:44:17,028 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 2.934 seconds (JVM running for 4.304)
+2023-02-16 16:44:48,376 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 31736 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 16:44:48,379 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 16:44:48,379 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 16:44:51,200 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 3.411 seconds (JVM running for 4.845)
+2023-02-16 16:47:05,901 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 20268 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 16:47:05,903 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 16:47:05,903 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 16:47:07,630 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 2.03 seconds (JVM running for 2.925)
+2023-02-16 19:45:31,245 INFO com.api.parkingcontrolhexagonal.domain.service.ParkingSpotServiceTest [main] Starting ParkingSpotServiceTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 8240 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 19:45:31,248 DEBUG com.api.parkingcontrolhexagonal.domain.service.ParkingSpotServiceTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 19:45:31,249 INFO com.api.parkingcontrolhexagonal.domain.service.ParkingSpotServiceTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 19:45:41,091 INFO com.api.parkingcontrolhexagonal.domain.service.ParkingSpotServiceTest [main] Started ParkingSpotServiceTest in 10.432 seconds (JVM running for 12.088)
+2023-02-16 19:45:42,009 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot deleted with id 190e0f71-9b44-46c8-8e30-5913a22b2446 at 16/02/2023 19:45:42
+2023-02-16 19:45:42,371 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2222 at 16/02/2023 19:45:42
+2023-02-16 19:45:42,437 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with name Aaaa at 16/02/2023 19:45:42
+2023-02-16 19:45:42,523 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2555 at 16/02/2023 19:45:42
+2023-02-16 19:45:42,746 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 8240 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 19:45:42,747 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 19:45:42,747 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 19:45:44,275 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 1.6 seconds (JVM running for 15.271)
+2023-02-16 19:45:44,817 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot deleted with id 190e0f71-9b44-46c8-8e30-5913a22b2446 at 16/02/2023 19:45:44
+2023-02-16 19:45:44,848 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2555 at 16/02/2023 19:45:44
+2023-02-16 19:45:44,867 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with name Aaaa at 16/02/2023 19:45:44
+2023-02-16 19:45:44,908 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2555 at 16/02/2023 19:45:44
+2023-02-16 19:49:07,901 INFO com.api.parkingcontrolhexagonal.domain.service.ParkingSpotServiceTest [main] Starting ParkingSpotServiceTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 10044 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 19:49:07,916 DEBUG com.api.parkingcontrolhexagonal.domain.service.ParkingSpotServiceTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 19:49:07,917 INFO com.api.parkingcontrolhexagonal.domain.service.ParkingSpotServiceTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 19:49:19,136 INFO com.api.parkingcontrolhexagonal.domain.service.ParkingSpotServiceTest [main] Started ParkingSpotServiceTest in 11.845 seconds (JVM running for 13.655)
+2023-02-16 19:49:19,891 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot deleted with id 190e0f71-9b44-46c8-8e30-5913a22b2446 at 16/02/2023 19:49:19
+2023-02-16 19:49:20,182 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2222 at 16/02/2023 19:49:20
+2023-02-16 19:49:20,256 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with name Aaaa at 16/02/2023 19:49:20
+2023-02-16 19:49:20,308 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2555 at 16/02/2023 19:49:20
+2023-02-16 19:49:20,569 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Starting ParkingSpotRestAdapterMockTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 10044 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 19:49:20,569 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 19:49:20,569 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 19:49:22,251 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterMockTest [main] Started ParkingSpotRestAdapterMockTest in 1.771 seconds (JVM running for 16.769)
+2023-02-16 19:49:22,362 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot deleted with id 190e0f71-9b44-46c8-8e30-5913a22b2446 at 16/02/2023 19:49:22
+2023-02-16 19:49:22,380 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2555 at 16/02/2023 19:49:22
+2023-02-16 19:49:22,398 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with name Aaaa at 16/02/2023 19:49:22
+2023-02-16 19:49:22,442 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2555 at 16/02/2023 19:49:22
+2023-02-16 19:54:56,250 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Starting ParkingControlHexagonalApplication using Java 17.0.5 on BRSVC-MTZ002951 with PID 9940 (C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal\target\classes started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 19:54:56,254 DEBUG com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 19:54:56,255 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] No active profile set, falling back to default profiles: default
+2023-02-16 19:55:06,194 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Started ParkingControlHexagonalApplication in 10.488 seconds (JVM running for 11.462)
+2023-02-16 19:56:07,926 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [http-nio-8080-exec-10] Parking spot created with id ac280423-d010-4a23-9a5f-48101a4f2bf7 at 16/02/2023 19:56:07
+2023-02-16 19:59:10,766 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Starting ParkingControlHexagonalApplication using Java 17.0.5 on BRSVC-MTZ002951 with PID 1264 (C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal\target\classes started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 19:59:10,769 DEBUG com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 19:59:10,769 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] No active profile set, falling back to default profiles: default
+2023-02-16 19:59:18,108 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Started ParkingControlHexagonalApplication in 7.835 seconds (JVM running for 8.797)
+2023-02-16 19:59:42,107 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [http-nio-8080-exec-1] Parking spot created with id 19783f2c-e488-47fc-88f5-f2bb0737fa2c at 16/02/2023 19:59:42
+2023-02-16 20:03:29,714 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Starting ParkingControlHexagonalApplication using Java 17.0.5 on BRSVC-MTZ002951 with PID 9924 (C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal\target\classes started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 20:03:29,723 DEBUG com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 20:03:29,724 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] No active profile set, falling back to default profiles: default
+2023-02-16 20:03:39,868 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Started ParkingControlHexagonalApplication in 10.652 seconds (JVM running for 11.438)
+2023-02-16 20:07:39,870 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Starting ParkingControlHexagonalApplication using Java 17.0.5 on BRSVC-MTZ002951 with PID 13660 (C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal\target\classes started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 20:07:39,873 DEBUG com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 20:07:39,873 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] No active profile set, falling back to default profiles: default
+2023-02-16 20:07:48,557 INFO com.api.parkingcontrolhexagonal.ParkingControlHexagonalApplication [restartedMain] Started ParkingControlHexagonalApplication in 9.189 seconds (JVM running for 10.131)
+2023-02-16 20:07:56,327 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [http-nio-8080-exec-4] Parking spot could not be found with number 123A at 16/02/2023 20:07:56
+2023-02-16 20:10:22,204 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] Starting ParkingSpotRestAdapterTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 2072 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 20:10:22,206 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 20:10:22,206 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 20:10:31,768 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] Started ParkingSpotRestAdapterTest in 10.076 seconds (JVM running for 11.769)
+2023-02-16 20:10:57,017 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] Starting ParkingSpotRestAdapterTest using Java 17.0.5 on BRSVC-MTZ002951 with PID 1264 (started by mateus.peverari.ext in C:\Users\mateus.peverari.ext\IdeaProjects\parking-control-hexagonal)
+2023-02-16 20:10:57,019 DEBUG com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] Running with Spring Boot v2.6.3, Spring v5.3.15
+2023-02-16 20:10:57,019 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] No active profile set, falling back to default profiles: default
+2023-02-16 20:11:06,015 INFO com.api.parkingcontrolhexagonal.infrastructure.adapters.input.rest.ParkingSpotRestAdapterTest [main] Started ParkingSpotRestAdapterTest in 9.517 seconds (JVM running for 10.957)
+2023-02-16 20:11:06,994 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot deleted with id 190e0f71-9b44-46c8-8e30-5913a22b2446 at 16/02/2023 20:11:06
+2023-02-16 20:11:07,115 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2555 at 16/02/2023 20:11:07
+2023-02-16 20:11:07,495 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with name Aaaa at 16/02/2023 20:11:07
+2023-02-16 20:11:07,525 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with number 23A at 16/02/2023 20:11:07
+2023-02-16 20:11:07,578 INFO com.api.parkingcontrolhexagonal.infrastucture.adapters.input.eventlistener.ParkingSpotEventListenerAdapter [main] Parking spot could not be found with id 190e0f71-9b44-46c8-8e30-5913a22b2555 at 16/02/2023 20:11:07
