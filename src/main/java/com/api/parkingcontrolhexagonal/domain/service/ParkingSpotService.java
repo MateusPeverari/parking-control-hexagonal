@@ -45,6 +45,16 @@ public class ParkingSpotService implements GetParkingSpotUseCase, CreateParkingS
     }
 
     @Override
+    public ParkingSpot getParkingSpotByNumber(String parkingSpotNumber) {
+        if (parkingSpotOutputPort.getParkingSpotByNumber(parkingSpotNumber).isEmpty()) {
+            parkingSpotEventPublisher.publishParkingSpotNotFoundByNumberEvent(new ParkingSpotNotFoundByNumberEvent(parkingSpotNumber));
+            throw new ParkingSpotNotFound("Parking Spot not found with number: " + parkingSpotNumber);
+        } else {
+            return parkingSpotOutputPort.getParkingSpotByNumber(parkingSpotNumber).orElseThrow(() -> new ParkingSpotNotFound("Parking Spot not found with number: " + parkingSpotNumber));
+        }
+    }
+
+    @Override
     public List<ParkingSpotEntity> getParkingSpotByName(String name) {
         if (parkingSpotOutputPort.getParkingSpotByName(name).isEmpty()) {
             parkingSpotEventPublisher.publishParkingSpotNotFoundByNameEvent(new ParkingSpotNotFoundByNameEvent(name));

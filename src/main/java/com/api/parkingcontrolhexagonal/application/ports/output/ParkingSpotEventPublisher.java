@@ -9,4 +9,5 @@ public interface ParkingSpotEventPublisher {
     void publishParkingSpotNotCreatedEvent(ParkingSpotNotCreatedEvent event);
     void publishParkingSpotNotFoundByIdEvent(ParkingSpotNotFoundByIdEvent event);
     void publishParkingSpotNotFoundByNameEvent(ParkingSpotNotFoundByNameEvent event);
+    void publishParkingSpotNotFoundByNumberEvent(ParkingSpotNotFoundByNumberEvent event);
 }

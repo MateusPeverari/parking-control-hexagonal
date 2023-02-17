@@ -71,6 +71,30 @@ paths:
         "404":
           description: Parking spot not found
 
+  /parking-spot/get-by-number/{parkingSpotNumber}:
+    get:
+      tags:
+        - parking-spot
+      summary: Get one parking spot
+      description: Get one parking spot using it's number
+      operationId: getParkingSpotByNumber
+      parameters:
+        - name: parkingSpotNumber
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "123A"
+      responses:
+        "200":
+          description: Sucessful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParkingSpotQueryResponse'
+        "404":
+          description: Parking spot not found
+
   /parking-spot/{id}:
     get:
       tags:

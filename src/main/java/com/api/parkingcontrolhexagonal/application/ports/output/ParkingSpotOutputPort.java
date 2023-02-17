@@ -11,6 +11,7 @@ public interface ParkingSpotOutputPort {
     ParkingSpot saveParkingSpot(ParkingSpot parkingSpot);
     void deleteParkingSpot(ParkingSpot parkingSpot);
     Optional<ParkingSpot> getParkingSpotById(UUID id);
+    Optional<ParkingSpot> getParkingSpotByNumber(String parkingSpotNumber);
     List<ParkingSpotEntity> getParkingSpotByName(String name);
     List<ParkingSpotEntity> getAllParkingSpot();
 }
